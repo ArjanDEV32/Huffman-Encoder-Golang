@@ -94,3 +94,15 @@ func (encoder *HuffmanEncoder)Decode(src string, Tree string, binaryEncodingLeng
 	}
 	return res
 }
+
+func (encoder *HuffmanEncoder)DecodeFromBinary(binary string, Tree string) string {
+	res, i:= "", 0 
+	for _,bit:=range binary {
+		if bit=='1' {
+			if i>len(Tree)-1 {return res}
+			res+=string(Tree[i])
+			i=0
+		} else {i+=1}
+	}
+	return res
+}
