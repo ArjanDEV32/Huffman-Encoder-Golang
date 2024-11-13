@@ -18,6 +18,10 @@ func (encoder *HuffmanEncoder)Encode(src string, binaryEncodingLength int) strin
 func (encoder *HuffmanEncoder)Decode(src string, Tree string, binaryEncodingLength int) string 
 ```
 
+```golang
+func (encoder *HuffmanEncoder)DecodeFromBinary(binary string,Tree string) string 
+```
+
 ### Usage 
 ```golang
 type HuffmanEncoder = hme.HuffmanEncoder
@@ -32,5 +36,6 @@ func main() {
 	fmt.Println(code)
 	fmt.Println(encoder.Tree)
 	fmt.Println(original)
+	fmt.Println(encoder.DecodeFromBinary(binary, encoder.Tree))
 }
 ```
